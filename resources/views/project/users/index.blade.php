@@ -38,7 +38,6 @@
             				<th class="text-center">ID</th>
             				<th class="text-center">Name</th>
                             <th class="text-center">Email</th>
-            				<th class="text-center">City</th>
                             <th class="text-center">Ban User</th>
                             <th class="text-center">View</th>
                             <th class="text-center">Edit</th>
@@ -51,13 +50,6 @@
             					<td>{{ $user->id }}</td>
             					<td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-            					<td>
-                                    @foreach($users_details as $detail)
-                                    @if($user->id == $detail->user_id)
-                                    {{ $detail->city }}
-                                    @endif
-                                    @endforeach
-                                </td>
                                 <td>
                                     <a href="{{ url('/admin/users/'.$user->id.'/ban') }}">
                                         <i class="fa fa-lock"></i>

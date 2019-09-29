@@ -21,14 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login','Auth\LoginController@loginApi');
 Route::post('register','Auth\RegisterController@registerApi');
 Route::post('logout','Auth\LoginController@logoutApi');
-
-
-// Product Routes
-Route::get('products', 'Api\ApiProductController@apiProducts');
-Route::get('product-categories', 'Api\ApiProductController@apiProductCategories');
-
-// Service Routes
-Route::post('addService', 'Api\ApiServiceController@addApiService');
-
-// Service Routes
-Route::post('placeOrder', 'Api\ApiOrderController@apiPlaceOrder');
+Route::post('userData','Api\ApiUserController@getUserData');

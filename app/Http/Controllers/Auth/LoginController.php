@@ -52,6 +52,7 @@ class LoginController extends Controller
 
     public function loginApi(Request $request)
     {
+        // dd($request->toArray());
         $this->validateLogin($request);
 
         if ($this->attemptLogin($request)) {
@@ -59,7 +60,7 @@ class LoginController extends Controller
             $user->setToken();
             $user->setTokenExpireDate();
             $new_user = User::where('id',$user->id)->with('user_details')->first();
-            dd($new_user);
+            // dd($new_user);
             return response()->json([
                 'data' => $new_user->toArray()
             ]);
@@ -72,7 +73,7 @@ class LoginController extends Controller
     {
         $user = Auth::guard('api')->user();
         // dd($request->toArray());
-        $user = User::where('api_token', $request->user_api_token)->first();
+        $user = User::where('id', $request->id)->first();
         $user->api_token = null;
         $user->api_token_expireIn = null;
         $user->remember_token = null;

@@ -75,17 +75,11 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        if ($data->user_role === 'rider') {
-            $user->roles()->attach(Role::where('name', 'Rider')->first());
+        if ($data->user_role === 'franchise') {
+            $user->roles()->attach(Role::where('name', 'Franchise')->first());
         }
-        elseif($data->user_role === 'customer') {
-            $user->roles()->attach(Role::where('name', 'Customer')->first());
-        }
-        elseif($data->user_role === 'service_provider') {
-            $user->roles()->attach(Role::where('name', 'Service Provider')->first());
-        }
-        else {
-            $user->roles()->attach(Role::where('name', 'Customer')->first());
+        elseif($data->user_role === 'client') {
+            $user->roles()->attach(Role::where('name', 'Client')->first());
         }
         UserDetails::create([
             'user_id' => $user->id,
@@ -104,17 +98,14 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        if ($request->user_role === 'rider') {
-            $user->roles()->attach(Role::where('name', 'Rider')->first());
+        if ($request->user_role === 'franchise') {
+            $user->roles()->attach(Role::where('name', 'Franchise')->first());
         }
-        elseif($request->user_role === 'customer') {
-            $user->roles()->attach(Role::where('name', 'Customer')->first());
-        }
-        elseif($request->user_role === 'service_provider') {
-            $user->roles()->attach(Role::where('name', 'Service Provider')->first());
+        elseif($request->user_role === 'client') {
+            $user->roles()->attach(Role::where('name', 'Client')->first());
         }
         else {
-            $user->roles()->attach(Role::where('name', 'Customer')->first());
+            $user->roles()->attach(Role::where('name', 'Client')->first());
         }
         UserDetails::create([
             'user_id' => $user->id,

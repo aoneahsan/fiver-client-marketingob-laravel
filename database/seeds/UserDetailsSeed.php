@@ -15,18 +15,8 @@ class UserDetailsSeed extends Seeder
     {
         $defaultUserDetails = new UserDetails();
         $defaultUserDetails->user_id = 0;
-        $defaultUserDetails->first_name = "First Name";
-        $defaultUserDetails->last_name = "Last Name";
         $defaultUserDetails->address = "address";
-        $defaultUserDetails->cnic = "CNIC";
         $defaultUserDetails->profile_image = "user.png";
-        $defaultUserDetails->location = "Location";
-        $defaultUserDetails->city = "City";
-        $defaultUserDetails->latitude = "Latitude";
-        $defaultUserDetails->longitude = "Longitude";
-        $defaultUserDetails->skills = "Skills";
-        $defaultUserDetails->occupation = "Occupation";
-        $defaultUserDetails->user_type = "User Type";
         $defaultUserDetails->save();
     }
 

@@ -205,7 +205,7 @@ class UserController extends Controller
     }
 
     // buyers Users
-    public function BuyerUsers()
+    public function ClientUsers()
     {
         // condition is in blade template
         if (Auth::user()->roles[0]->id == 1) {
@@ -220,7 +220,7 @@ class UserController extends Controller
     }
 
     // Admins Users
-    public function SellerUsers()
+    public function FranchiseUsers()
     {
         // condition is in blade template
         if (Auth::user()->roles[0]->id == 1) {

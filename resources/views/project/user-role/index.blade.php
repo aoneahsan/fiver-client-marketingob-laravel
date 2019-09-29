@@ -16,10 +16,9 @@
             				<th class="text-center">ID</th>
             				<th class="text-center">Name</th>
             				<th class="text-center">Email</th>
-                            <th class="text-center">Super Admin</th>
             				<th class="text-center">Admin</th>
-            				<th class="text-center">Buyer</th>
-            				<th class="text-center">Seller</th>
+            				<th class="text-center">Franchise Users</th>
+            				<th class="text-center">Client Users</th>
                             <th class="text-center">Assign New Role</th>
             			</tr>
             		</thead>
@@ -33,17 +32,14 @@
 	            					<td>{{ $user->email }}
 	            						<input type="hidden" name="email" value="{{ $user->email }}">
 	            					</td>
-	            					<td>
-	            						<input type="checkbox" {{ $user->hasRole('Super Admin') ? 'checked' : '' }} name="super_admin">
-	            					</td>
                                     <td>
                                         <input type="checkbox" {{ $user->hasRole('Admin') ? 'checked' : '' }} name="admin">
                                     </td>
 	            					<td>
-	            						<input type="checkbox" {{ $user->hasRole('Buyer') ? 'checked' : '' }} name="buyer">
+	            						<input type="checkbox" {{ $user->hasRole('Franchise') ? 'checked' : '' }} name="buyer">
 	            					</td>
 	            					<td>
-	            						<input type="checkbox" {{ $user->hasRole('Seller') ? 'checked' : '' }} name="seller">
+	            						<input type="checkbox" {{ $user->hasRole('Client') ? 'checked' : '' }} name="seller">
 	            					</td>
 	            					<td>
 	            						<button type="submit" class="btn btn-blue btn-bold">

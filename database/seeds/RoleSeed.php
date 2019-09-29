@@ -24,18 +24,14 @@ class RoleSeed extends Seeder
         $role_admin->save();
 
         $role_rider = new Role();
-        $role_rider->name = "Rider";
-        $role_rider->description = "Rider User";
+        $role_rider->name = "Franchise";
+        $role_rider->description = "Franchise User";
         $role_rider->save();
 
         $role_customer = new Role();
-        $role_customer->name = "Customer";
-        $role_customer->description = "Customer User";
+        $role_customer->name = "Client";
+        $role_customer->description = "Client User";
         $role_customer->save();
 
-        $role_service_provider = new Role();
-        $role_service_provider->name = "Service Provider";
-        $role_service_provider->description = "Service Provider User";
-        $role_service_provider->save();
     }
 }
